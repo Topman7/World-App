@@ -11,7 +11,7 @@
 }
 
 .light-mode {
-  --Light-elements-color: hsl(0, 100%, 100%);
+  --bg-elements-color: hsl(0, 100%, 100%);
   --text-color: hsl(200, 15%, 8%);
   --Grey-400-Light-Mode-Input: hsl(0, 0%, 50%);
   --background-color: hsl(0, 0%, 99%);
