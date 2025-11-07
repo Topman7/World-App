@@ -1,22 +1,19 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import CountryDetail from "./pages/CountryDetail";
-import NavBar from "./components/NavBAr";
+import CountryDetails from "./pages/CountryDetails";
+import NavBar from "./Components/NavBar";
 import { useEffect, useState } from "react";
 
-import countriesData from "./data.json";
+import CountriesData from "./data.json";
 
 function App() {
-  // =================DECLARE INITIAL=======================
-
-  const [allCountries] = useState(countriesData);
+  //======declare intial========
+  const [allCountries] = useState(CountriesData);
   const [filteredCountries, setFilteredCountries] = useState([]);
-  const [isLoading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
- 
-
-  // ==============Filter By Search===============================
+  // ========filter countries by search========
   const filterBySearch = (searched) => {
     const searchedCountry = allCountries.filter((country) => {
       return country.name.toLowerCase().includes(searched);
@@ -24,17 +21,13 @@ function App() {
     setFilteredCountries(searchedCountry);
   };
 
-  console.log(filteredCountries);
-
-  //======================FILTER BY REGION======================
+  // ========filter countries by region========
   const filterByRegion = (region) => {
     const selectedRegion = allCountries.filter((eCountry) => {
       return eCountry.region === region;
     });
-
     setFilteredCountries(selectedRegion);
   };
-
   return (
     <>
       <BrowserRouter>
@@ -56,7 +49,7 @@ function App() {
           />
           <Route
             path="/details/:countryName"
-            element={<CountryDetail detailsByCountry={allCountries} />}
+            element={<CountryDetails detailsByCountry={allCountries} />}
           />
         </Routes>
       </BrowserRouter>
