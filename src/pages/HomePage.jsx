@@ -1,14 +1,14 @@
 import React from "react";
-import SearchBar from "../components/SearchBar";
-import Dropdown from "../components/Dropdown";
-import Countries from "../components/Countries";
+import SearchBar from "../Components/SearchBar";
+import DropDown from "../Components/DropDown";
+import Countries from "../Components/Countries";
 
 const HomePage = ({ theWorld, inputedCountry, clickedRegion }) => {
   return (
-    <div className="sm:px-20 px-4 pb-20">
-      <div className="flex flex-col gap-8 sm:items-center sm:justify-between sm:my-[50px] sm:flex-row my-6">
+    <div className="sm:px-20 px-4">
+      <div className="flex flex-col sm:flex-row gap-8 justify-between sm:items-center sm:my-[50px] my-6">
         <SearchBar inputedCountry={inputedCountry} />
-        <Dropdown clickedRegion={clickedRegion} />
+        <DropDown clickedRegion={clickedRegion} />
       </div>
       <Countries getTheWorld={theWorld} />
     </div>

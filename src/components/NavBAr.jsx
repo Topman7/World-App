@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { IoMoonOutline, IoMoon } from "react-icons/io5";
+import { IoMoonOutline, IoMoon, IoSunnyOutline } from "react-icons/io5";
 
-const NavBAr = () => {
+const NavBar = () => {
   const [darkMode, setDarkMode] = useState(() => {
     return JSON.parse(localStorage.getItem("dark-mode")) || false;
   });
@@ -13,15 +13,18 @@ const NavBAr = () => {
     document.body.classList.add("light-mode");
   }
 
-  const moon = darkMode ? <IoMoon /> : <IoMoonOutline />;
-
+  const moon = darkMode ? (
+    <IoSunnyOutline className="w-3 sm:w-4" />
+  ) : (
+    <IoMoon className="w-3 sm:w-4" />
+  );
   return (
-    <div className=" flex justify-between items-center sm:p-8 sm:px-20 px-4 py-6 shadom-md bg-elements custom-text-color ">
+    <div className="bg-elements custom-text-color flex justify-between items-center sm:py-8 sm:px-20 px-4 py-5 shadow-md">
       <Link
         to="/"
-        className="decoration-none font-semibold sm:text-[22px] text-[14px] "
+        className="decoration-none font-semibold sm:text-[22px] text-[14px]"
       >
-        Where in the World?
+        Where in the world?
       </Link>
 
       <div
@@ -29,17 +32,16 @@ const NavBAr = () => {
           document.body.classList.toggle("light-mode");
           setDarkMode(!darkMode);
 
-          if (document.body.classList.contains("light-.mode")) {
-            localStorage.setItem("darkMode", JSON.stringifly(false));
+          if (document.body.classList.contains("light-mode")) {
+            localStorage.setItem("dark-mode", JSON.stringify(false));
           } else {
             localStorage.setItem("dark-mode", JSON.stringify(true));
           }
         }}
-        className="flex items-center gap-2"
+        className="flex items-center gap-2 cursor-pointer"
       >
         {moon}
-        <p className="sm:text-[16px] text-[12px] font-semibold cursor-pointer">
-          {" "}
+        <p className="sm:text-[16px] text-[12px] font-semibold">
           {darkMode ? "Light Mode" : "Dark Mode"}
         </p>
       </div>
@@ -47,4 +49,4 @@ const NavBAr = () => {
   );
 };
 
-export default NavBAr;
+export default NavBar;

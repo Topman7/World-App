@@ -1,6 +1,5 @@
 import React from "react";
-import earth from "../../public/the-earth-1179205_1280 (1).png";
-
+import earth from "../../public/world-map-3d-illustration-free-png.webp";
 const Loading = () => {
   return (
     <div>

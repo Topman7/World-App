@@ -10,11 +10,11 @@ const SearchBar = ({ inputedCountry }) => {
         }}
         type="text"
         placeholder="Search for a country..."
-        className="shadom-sm py-3 ps-16 pe-3 sm:w-[450px] w-full sm:rounded-md sm:placeholder:text-[14px] placeholder:text-[12px] bg-elements"
+        className="bg-elements py-3 ps-16 pe-3 sm:w-[450px] w-full shadow-sm rounded-md sm:placeholder:text-[14px] placeholder:text-[12px]"
       />
-
-      <IoMdSearch className="absolute top-3 text-2xl left-5 " />
+      <IoMdSearch className="absolute top-3 text-2xl left-5" />
     </div>
   );
 };
+
 export default SearchBar;
