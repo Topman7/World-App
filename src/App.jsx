@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CountryDetails from "./pages/CountryDetails";
 import NavBar from "./components/NavBar";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import CountriesData from "./data.json";
 
