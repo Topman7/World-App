@@ -24,7 +24,7 @@ const NavBar = () => {
         to="/"
         className="decoration-none font-semibold sm:text-[22px] text-[14px]"
       >
-        Where in the world?
+        Where in the world ?
       </Link>
 
       <div
